@@ -1,0 +1,10 @@
+import Info from "../components/Info"
+
+const accountInfo=()=>{
+    return(
+<Info/>
+    )
+}
+export default accountInfo;
+
+
