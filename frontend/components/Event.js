@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import Header from "../components/Header";
+import Header from "./Header";
 
 import Slider from "react-slick";
 
@@ -20,7 +20,7 @@ const Event = (props) => {
                         className="pt-lg--10 pb-lg--10 bg-white rounded-3"
                       >
                         <img
-                          src={props.events.image}
+                          src={props.image}
                           alt="avater"
                           className="rounded-3 img-fluid"
                         />
@@ -32,13 +32,13 @@ const Event = (props) => {
 
                   <h2 className="fw-700 text-grey-900 display1-size lh-3 porduct-title display2-md-size">
                     {" "}
-                    {props.events.title}
+                    {props.title}
                   </h2>
                  
                 
                   <div className="clearfix"></div>
                   <p className="font-xsss fw-400 text-grey-500 lh-30 pe-5 mt-3 me-5">
-                    {props.events.description}
+                    {props.description}
                   </p>
 
 
@@ -46,9 +46,9 @@ const Event = (props) => {
                         <div className="bg-greylight me-3 p-3 border-light-md rounded-xxl theme-dark-bg">
                           <h4 className="fw-700 font-lg ls-3 text-grey-900 mb-0">
                             <span className="ls-3 d-block font-xsss text-grey-500 fw-500">
-                                {props.events.month}
+                                {props.month}
                             </span>
-                                {props.events.date}
+                                {props.date}
                           </h4>
                         </div>
                         </div>
@@ -59,12 +59,11 @@ const Event = (props) => {
                   <div className="clearfix"></div>
                   <ul className="product-feature-list mt-5">
                     <li className="w-50 lh-32 font-xsss text-grey-500 fw-500 float-left">
-                      <b className="text-grey-900"> Created by : </b>  {props.events.createdBy}
+                      <b className="text-grey-900"> Created by : </b>  {props.createdBy}
                     </li>
 
                     <li className="w-50 lh-32 font-xsss text-grey-500 fw-500 float-left">
-                      <b className="text-grey-900">Association : </b> {props.events.association}
-                      {/* LA-107 */}
+                      <b className="text-grey-900">Association : </b> {props.association}
                     </li>
                   </ul>
                 </div>

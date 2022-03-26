@@ -8,7 +8,6 @@ import { AuthContext } from "../context/AuthContext";
 
 const HomePage =(props)=> {
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser)
  return (
    <Fragment>
      <Header />

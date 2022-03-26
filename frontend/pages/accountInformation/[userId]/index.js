@@ -46,8 +46,8 @@ export async function getStaticPaths() {
       }else{
     selectedUser.youtube = null;
       }
-    if (doc.data().location !== undefined) {
-      selectedUser.location= doc.data().location;
+    if (doc.data().city !== undefined) {
+      selectedUser.location= doc.data().city;
     } else {
       selectedUser.location = null;
     }
@@ -73,15 +73,15 @@ export async function getStaticPaths() {
     } else {
       selectedUser.instagram = null;
     }
-    if (doc.data().about !== undefined) {
-      selectedUser.about = doc.data().about;
+    if (doc.data().description !== undefined) {
+      selectedUser.about = doc.data().description;
     } else {
       selectedUser.about = null;
     }
-    if (doc.data().linkedin !== undefined) {
-      selectedUser.linkedin = doc.data().linkedin;
+    if (doc.data().linkedIn !== undefined) {
+      selectedUser.linkedIn = doc.data().linkedIn;
     } else {
-      selectedUser.linkedin = null;
+      selectedUser.linkedIn = null;
     }
     
     if (doc.data().photoURL !== undefined) {
@@ -103,11 +103,9 @@ export async function getStaticPaths() {
   
   
     });
-    // console.log(selectedUser);
     return {
       props: {
         selectedUser,
-        // posts
       },
     };
   }

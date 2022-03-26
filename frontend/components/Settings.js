@@ -16,6 +16,10 @@ const  Settings =()=> {
       const Router = useRouter();
  const signOutHandler = async () => {
    await signOut(auth);
+   localStorage.removeItem('authUser')
+   localStorage.removeItem('user');
+   localStorage.removeItem('ally-supports-cache')
+   localStorage.removeItem('login')
 Router.push("/");
  };
 if(currentUser){
@@ -36,6 +40,7 @@ if(currentUser){
                             <h4 className="mb-4 font-xxl fw-700 mont-font mb-lg-5 mb-4 font-md-xs">
                               Settings
                             </h4>
+                            <br/> <br/> 
                             <div className="nav-caption fw-600 font-xssss text-grey-500 mb-2">
                               Genaral
                             </div>
@@ -43,7 +48,7 @@ if(currentUser){
                               <li className="list-inline-item d-block border-bottom me-0">
                                 <NavLink
                                   href={`/accountInformation/${currentUser.uid}`}
-                                  // href="/accountInfo"
+
                                   className="pt-2 pb-2 d-flex align-items-center"
                                 >
                                   <i className="btn-round-md bg-blue-gradiant text-white feather-home font-md me-3"></i>
@@ -54,7 +59,6 @@ if(currentUser){
                                 </NavLink>
                               </li>
 
-                            
                               <li className="list-inline-item d-block me-0">
                                 <NavLink
                                   href={`/socialLinks/${currentUser.uid}`}
@@ -69,30 +73,11 @@ if(currentUser){
                               </li>
                             </ul>
 
-                            <div className="nav-caption fw-600 font-xsss text-grey-500 mb-2">
-                              Acount
-                            </div>
-                            <ul className="list-inline mb-4">
-                          
-                              <li className="list-inline-item d-block  me-0">
-                                <NavLink
-                                  href="/password"
-                                  className="pt-2 pb-2 d-flex align-items-center"
-                                >
-                                  <i className="btn-round-md bg-blue-gradiant text-white feather-inbox font-md me-3"></i>{" "}
-                                  <h4 className="fw-600 font-xsss mb-0 mt-0">
-                                    Password
-                                  </h4>
-                                  <i className="ti-angle-right font-xsss text-grey-500 ms-auto mt-3"></i>
-                                </NavLink>
-                              </li>
-                            </ul>
-
+                            <br/> <br/> 
                             <div className="nav-caption fw-600 font-xsss text-grey-500 mb-2">
                               Other
                             </div>
                             <ul className="list-inline">
-                         
 
                               <li className="list-inline-item d-block me-0">
                                 <a
@@ -108,6 +93,7 @@ if(currentUser){
                                 </a>
                               </li>
                             </ul>
+                            <br/> <br/> <br/> <br/>
                           </div>
                         </div>
                       </div>

@@ -21,7 +21,6 @@ const EventList =(props)=>{
 
     export async function getStaticProps() {
         let events = [];
-      //how to get the association name here
         const q = query(collection(db, "events"), where("association", "==", 'association1')) ;
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {

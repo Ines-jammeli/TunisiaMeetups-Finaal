@@ -6,7 +6,7 @@ import ProfilecardThree from "../components/ProfilecardThree";
 import Postview from "../components/Postview";
 import Createpost from "../components/Createpost";
 const UserPage = (props) => {
-  console.log(props.postsData);
+  console.log('likes' + props);
 
   return (
     <Fragment>
@@ -21,7 +21,6 @@ const UserPage = (props) => {
               </div>
               <div className="col-xl-4 col-xxl-3 col-lg-4 pe-0">
                 <Profiledetail userData={props} />
-                {/* <Profilephoto userData={props} /> */}
               </div>
               <div className="col-xl-8 col-xxl-9 col-lg-8">
                 <Createpost />

@@ -3,34 +3,6 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
 
-
-const TabOne = [
-    {
-        image: '01',
-        bigImage: 'assets/images/hotel.png',
-    },
-    {
-        image: '02',
-        bigImage: 'assets/images/hotel.png',
-    },
-    {
-        image: '03',
-        bigImage: 'assets/images/hotel.png',
-    },
-    {
-        image: '04',
-        bigImage: 'assets/images/hotel.png',
-    },
-    {
-        image: '05',
-        bigImage: 'assets/images/hotel.png',
-    },
-    {
-        image: '06',
-        bigImage: 'assets/images/hotel.png',
-    },
-]
-
 class Profilephoto extends Component {
     constructor(props) {
         super(props);

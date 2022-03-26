@@ -99,11 +99,10 @@ export async function getStaticProps(context) {
       (selectedUser.phone = doc.data().phone),
       (selectedUser.userId = doc.data().userId);
   });
-  // console.log(selectedUser);
+
   return {
     props: {
       selectedUser,
-      // posts
     },
   };
 }

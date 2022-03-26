@@ -30,15 +30,11 @@ const  Info =(props)=> {
     const coverInputRef=useRef();
 
 async function updateInfo() {
-  // const authUser1 = JSON.parse(localStorage.getItem('authUser1'));
-  // condition ? exprSiVrai : exprSiFaux
-  // const enteredFullName = fullNameInputRef.current.value ? fullNameInputRef.current.value : authUser1.name;
-  // const enteredEmail = emailInputRef.current.value;
-  //  const enteredPassword = passwordInputRef.current.value;
+
    const enteredPhone = phoneInputRef.current.value;
    const enteredPhoto = photoInputRef.current.value;
    const enteredAssociation=associationInputRef.current.value;
-   const enteredDescription=descriptionInputRef.current.value //? descriptionInputRef.current.value : authUser1.description;
+   const enteredDescription=descriptionInputRef.current.value ;
    const enteredCity=cityInputRef.current.value;
    const enteredFacebook=facebookInputRef.current.value;
    const enteredYouTube=youtubeInputRef.current.value;
@@ -47,11 +43,8 @@ async function updateInfo() {
    const enteredTwitter=twitterInputRef.current.value;
    const enteredCoverURL=coverInputRef.current.value;
 
-    // console.log(currentUser)
-    // console.log('the connected user is '+ authUser1.name)
     updateDoc(doc(db, "users", `${props.userData.name}`), {
-      // name: enteredFullName,
-      //  email: enteredEmail,
+
        coverURL: enteredCoverURL,
        city: enteredCity,
        description: enteredDescription,
@@ -64,7 +57,6 @@ async function updateInfo() {
        youtube: enteredYouTube,
        twitter: enteredTwitter,
        youtube: enteredYouTube,
-      //  photoURL:user.photoURL
      });
      router.push('/home')
    }
@@ -109,35 +101,8 @@ async function updateInfo() {
                     </div>
 
                     <form action="#">
-                      {/* <div className="row"> */}
-                        {/* <div className="col-lg-6 mb-3">
-                          <div className="form-group">
-                            <label className="mont-font fw-600 font-xsss mb-2">
-                              First Name
-                            </label>
-                            <input type="text" className="form-control" defaultValue={props.userData.name}/>
-                          </div>
-                        </div> */}
-
-                        {/* <div className="col-lg-6 mb-3">
-                          <div className="form-group">
-                            <label className="mont-font fw-600 font-xsss mb-2">
-                              Last Name
-                            </label>
-                            <input type="text" className="form-control" />
-                          </div>
-                        </div> */}
-                      {/* </div> */}
-
+                     
                       <div className="row">
-                        {/* <div className="col-lg-6 mb-3">
-                          <div className="form-group">
-                            <label className="mont-font fw-600 font-xsss mb-2">
-                              Email
-                            </label>
-                            <input type="text" className="form-control" defaultValue={props.userData.email}/>
-                          </div>
-                        </div> */}
 
                         <div className="col-lg-6 mb-3">
                           <div className="form-group">
@@ -158,49 +123,6 @@ async function updateInfo() {
                         </div>
                       </div>
 
-                      {/* <div className="row">
-                        <div className="col-lg-12 mb-3">
-                          <div className="form-group">
-                            <label className="mont-font fw-600 font-xsss mb-2">
-                              Country
-                            </label>
-                            <input type="text" className="form-control" />
-                          </div>
-                        </div>
-
-                        <div className="col-lg-12 mb-3">
-                          <div className="form-group">
-                            <label className="mont-font fw-600 font-xsss mb-2">
-                              Address
-                            </label>
-                            <input type="text" className="form-control" />
-                          </div>
-                        </div>
-                      </div> */}
-
-                      {/* <div className="row">
-                        <div className="col-lg-6 mb-3">
-                          <div className="form-group">
-                            <label className="mont-font fw-600 font-xsss mb-2">
-                              Twon / City
-                            </label>
-                            <input type="text" className="form-control" defaultValue={props.userData.location} ref={cityInputRef}/>
-                          </div>
-                          </div>
-                        
-
-                          <div className="row">
-                        <div className="col-lg-6 mb-3">
-                          <div className="form-group">
-                            <label className="mont-font fw-600 font-xsss mb-2">
-                              Youtube URL
-                            </label>
-                            <input type="url" className="form-control" defaultValue={props.userData.youtube} ref={youtubeInputRef}/>
-                          </div>
-                        </div>
-                        </div> */}
-
-
 
                         <div className="row">
                         <div className="col-lg-6 mb-3">
@@ -211,8 +133,7 @@ async function updateInfo() {
                             <input type="text" className="form-control" defaultValue={props.userData.location} ref={cityInputRef}/>
                           </div>
                         </div>
-                        {/* </div>
-                        <div className="row"> */}
+
                         <div className="col-lg-6 mb-3">
                           <div className="form-group">
                             <label className="mont-font fw-600 font-xsss mb-2">
@@ -233,8 +154,7 @@ async function updateInfo() {
                             <input type="url" className="form-control" defaultValue={props.userData.linkedIn} ref={linkedInInputRef}/>
                           </div>
                         </div>
-                        {/* </div>
-                        <div className="row"> */}
+
                         <div className="col-lg-6 mb-3">
                           <div className="form-group">
                             <label className="mont-font fw-600 font-xsss mb-2">
@@ -277,31 +197,6 @@ async function updateInfo() {
                             <input type="url" className="form-control" defaultValue={props.userData.coverURL} ref={coverInputRef}/>
                           </div>
                         </div>
-                        
-
-                        {/* <div className="col-lg-12 mb-3">
-                          <div className="card mt-3 border-0">
-                            <div className="card-body d-flex justify-content-between align-items-end p-0">
-                              <div className="form-group mb-0 w-100">
-                                <input
-                                  type="file"
-                                  name="file"
-                                  id="file"
-                                  className="input-file"
-                                />
-                                <label
-                                  htmlFor="file"
-                                  className="rounded-3 text-center bg-white btn-tertiary js-labelFile p-4 w-100 border-dashed"
-                                >
-                                  <i className="ti-cloud-down large-icon me-3 d-block"></i>
-                                  <span className="js-fileName">
-                                    Drag and drop or click to replace
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                        </div> */}
 
                         <div className="col-lg-12 mb-3">
                           <label className="mont-font fw-600 font-xsss mb-2 text-dark">
@@ -318,13 +213,11 @@ async function updateInfo() {
 
                         <div className="col-lg-12">
                         <button onClick={updateInfo}
-                            // href="/home"
                             className="bg-primary text-center text-white font-xsss fw-600 p-3 w175 rounded-3 d-inline-block"
                           >
                             Save
                           </button>
                         </div>
-                      {/* </div> */}
                       </div>
                     </form>
                   </div>

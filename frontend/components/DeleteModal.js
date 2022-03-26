@@ -3,7 +3,6 @@ import { doc, deleteDoc, increment, updateDoc } from "firebase/firestore";
 import Router from "next/router";
 import { auth, db } from "../firebase/clientApp";
 
-// reactstrap components
 import { Button, Modal, ModalBody, ModalFooter } from "reactstrap";
 
 const Example=(props)=> {

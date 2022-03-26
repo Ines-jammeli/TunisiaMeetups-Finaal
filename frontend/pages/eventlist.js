@@ -14,8 +14,6 @@ const EventList =(props)=>{
     )
     }
 
-
-
     export default EventList;
 
 
@@ -25,7 +23,6 @@ const EventList =(props)=>{
         const q = query(collection(db, "events"));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-        //   console.log(doc.data().title);
           events.push({
             title: doc.data().title,
             image: doc.data().image,

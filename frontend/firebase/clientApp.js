@@ -19,5 +19,4 @@ if (!getApps().length) {
 
 export const app = firebaseApp
 export const auth = getAuth(app)
-// export const messaging = getMessaging(app);
 export const db = getFirestore();

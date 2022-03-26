@@ -15,7 +15,6 @@ const emailPasswordAuthLogin = () => {
   const fbLoginHandler = useCallback(async () => {
     const provider = new FacebookAuthProvider();
     provider.addScope("public_profile");
-    // additional scopes can be added as per requirement
     try {
       const result = await signInWithPopup(auth, provider);
       console.log(result);
@@ -27,7 +26,6 @@ const emailPasswordAuthLogin = () => {
   }, [Router]);
   const googleLoginHandler = useCallback(async () => {
     const provider = new GoogleAuthProvider();
-    // additional scopes can be added as per requirement
     try {
       await signInWithPopup(auth, provider);
       Router.push("/home");

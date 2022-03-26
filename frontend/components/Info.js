@@ -4,10 +4,6 @@ import Header from "../components/Header";
 import {
   updateDoc,
   doc,
-  getDocs,
-  collection,
-  query,
-  where,
 } from "firebase/firestore";
 import { auth, db } from "../firebase/clientApp";
 import NavLink from "../components/NavLink";
@@ -21,8 +17,6 @@ console.log(props.userData.name);
   const { currentUser } = useContext(AuthContext);
 
   const router = new useRouter();
-  const fullNameInputRef = useRef();
-  const emailInputRef = useRef();
   const phoneInputRef = useRef();
   const associationInputRef = useRef();
   const aboutInputRef = useRef();
@@ -86,18 +80,6 @@ router.reload(window.location.pathname);
 
                   <form action="#">
                     <div className="row">
-                      <div className="col-lg-6 mb-3">
-                        <div className="form-group">
-                          <label className="mont-font fw-600 font-xsss mb-2">
-                            Full Name
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={props.userData.name}
-                          />
-                        </div>
-                      </div>
 
                       <div className="col-lg-6 mb-3">
                         <div className="form-group">
@@ -112,21 +94,7 @@ router.reload(window.location.pathname);
                           />
                         </div>
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col-lg-6 mb-3">
-                        <div className="form-group">
-                          <label className="mont-font fw-600 font-xsss mb-2">
-                            Email
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            defaultValue={props.userData.email}
-                          />
-                        </div>
-                      </div>
 
                       <div className="col-lg-6 mb-3">
                         <div className="form-group">
@@ -141,6 +109,7 @@ router.reload(window.location.pathname);
                           />
                         </div>
                       </div>
+
                     </div>
 
                     <div className="row">

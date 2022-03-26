@@ -5,9 +5,12 @@ import Router from "next/router";
 import moment from "moment";
 import Example from "../components/DeleteModal";
 import HeartButton from "../components/HeartButton"
-const Postview =(props)=> {
-console.log(props)
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 
+const Postview =(props)=> {
+  const { currentUser } = useContext(AuthContext);
+console.log(currentUser.displayName)
 
    const [isOpen,setIsOpen]=useState(false) 
 
@@ -53,9 +56,13 @@ console.log(props)
               {moment(props.timestamp, "DDMMYYYY,h:mm:ss").fromNow()}
             </span>
           </h4>
+          
+          {props.creatorName===currentUser.displayName  ?  (
           <div className="ms-auto pointer">
             <Example id = {props.id} />
-          </div>
+          </div> ) : null}
+
+
         </div>
         {props.video ? (
           <div className="card-body p-0 mb-3 rounded-3 overflow-hidden uttam-die">
@@ -92,24 +99,11 @@ console.log(props)
             <a>💗 </a>
             {props.likes} Like
           </div>
-          <div
-            className={`pointer ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss ${menuClass}`}
-            id={`dropdownMenu${props.id}`}
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            onClick={toggleOpen}
-          >
-            <i className="feather-share-2 text-grey-900 text-dark btn-round-sm font-lg"></i>
-            <span className="d-none-xs">Share</span>
-          </div>
+
           <div
             className={`dropdown-menu dropdown-menu-end p-4 rounded-xxl border-0 shadow-lg right-0 ${menuClass}`}
             aria-labelledby={`dropdownMenu${props.id}`}
           >
-            <h4 className="fw-700 font-xss text-grey-900 d-flex align-items-center">
-              Share{" "}
-              <i className="feather-x ms-auto font-xssss btn-round-xs bg-greylight text-grey-900 me-2"></i>
-            </h4>
             <div className="card-body p-0 d-flex">
               <ul className="d-flex align-items-center justify-content-between mt-2">
                 <li className="me-1">

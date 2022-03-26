@@ -22,7 +22,6 @@ function NewEventForm(props) {
     function submitHandler(event) {
       event.preventDefault();
   
-    //   const enteredAssociation= associationInputRef.current.value;
       const enteredTitle = titleInputRef.current.value;
       const enteredImage = imageInputRef.current.value;
       const enteredAddress = cityInputRef.current.value;
@@ -47,15 +46,6 @@ function NewEventForm(props) {
         month: enteredMonth,
       });
       router.push('/')
-    //   const meetupData = {
-    //     association: enteredAssociation,
-    //     title: enteredTitle,
-    //     image: enteredImage,
-    //     address: enteredAddress,
-    //     description: enteredDescription,
-    //   };
-  
-    //   props.onAddMeetup(meetupData);
     }
   
     return (
@@ -159,13 +149,11 @@ function NewEventForm(props) {
       
                               <div className="col-lg-12">
                               <button onClick={submitHandler}
-                                  // href="/home"
                                   className="bg-primary text-center text-white font-xsss fw-600 p-3 w175 rounded-3 d-inline-block"
                                 >
                                   Save
                                 </button>
                               </div>
-                            {/* </div> */}
                             </div>
                           </form>
                         </div>

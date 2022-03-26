@@ -18,7 +18,6 @@ const docSnap = await getDoc(docRef);
 if (docSnap.exists()) {
   console.log("Document data:", docSnap.data());
 } else {
-  // doc.data() will be undefined in this case
     setDoc(doc(db, "users", `${user.displayName}`), {
       userId: user.uid,
       email: user.email,
@@ -40,14 +39,4 @@ if (docSnap.exists()) {
 
 
 };
-
-  // const q = query(
-  //   collection(db, "users"),
-  //   where("userId", "==", user.uid)
-  // );
-  // const querySnapshot = await getDocs(q);
-  // querySnapshot.forEach((doc) => {
-  //   console.log(doc.data().name);
-  // });
-
   

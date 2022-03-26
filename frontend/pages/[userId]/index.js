@@ -3,7 +3,6 @@ import UserPage from "../../components/UserPage";
 import { collection, query, where, getDocs,orderBy } from "firebase/firestore";
 import { db, auth } from "../../firebase/clientApp";
 const User = (props) => {
-console.log(props)
   return (
     <UserPage
       postsData={props.posts}
@@ -48,7 +47,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const userId = context.params.userId;
-  console.log(userId);
  let posts = [];
   let selectedUser = {};
 
@@ -63,8 +61,9 @@ export async function getStaticProps(context) {
   const querySnapshot2 = await getDocs(q2);
   const options = { year: "numeric", month: "numeric", day: "numeric" };
   querySnapshot2.forEach((doc) => {
-    // console.log(doc.data().message);
+
     posts.push({
+      likes: doc.data().likes,
       body: doc.data().message,
       image: doc.data().photo,
       id: doc.data().id,
@@ -139,7 +138,6 @@ export async function getStaticProps(context) {
 
 
   });
-  // console.log(selectedUser);
   return {
     props: {
       selectedUser,
