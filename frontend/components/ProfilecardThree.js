@@ -1,11 +1,13 @@
 import React,{Component} from 'react';
+import Image from 'next/image';
+
 
 const ProfilecardThree =(props)=> {
 
         return (
           <div className="card w-100 border-0 p-0 bg-white shadow-xss rounded-xxl">
             <div className="card-body h250 p-0 rounded-xxl overflow-hidden m-3">
-              <img
+              <Image
                 src={props.userData.coverURL}
                 alt="avater"
                 width="1200"

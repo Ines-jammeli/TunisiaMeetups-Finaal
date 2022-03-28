@@ -7,6 +7,7 @@ import Example from "../components/DeleteModal";
 import HeartButton from "../components/HeartButton"
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
+import Link from "next/link";
 
 const Postview =(props)=> {
   const { currentUser } = useContext(AuthContext);
@@ -66,11 +67,13 @@ console.log(currentUser.displayName)
         </div>
         {props.video ? (
           <div className="card-body p-0 mb-3 rounded-3 overflow-hidden uttam-die">
-            <a href="/defaultvideo" className="video-btn">
+            <Link href="/defaultvideo"> 
+            <a className="video-btn">
               <video autoPlay loop className="float-right w-100">
                 <source src={`assets/images/${props.video}`} type="video/mp4" />
               </video>
             </a>
+            </Link>
           </div>
         ) : (
           ""

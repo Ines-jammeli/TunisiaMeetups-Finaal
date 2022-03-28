@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Header from "./Header";
-
+import Link from 'next/link'
 import Slider from "react-slick";
 
 

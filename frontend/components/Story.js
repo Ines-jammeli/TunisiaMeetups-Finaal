@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import Header from "./Header";
 import Pagetitle from "../components/Pagetitle";
 import Appfooter from "./Appfooter";
-
+import Link from "next/link";
 
 const Story =(props)=> {
 

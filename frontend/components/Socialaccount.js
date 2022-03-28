@@ -1,5 +1,5 @@
 import React, { Component , Fragment,useRef } from "react";
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import {
   updateDoc,
   doc,
@@ -54,12 +54,13 @@ router.reload(window.location.pathname);
                     <div className="middle-wrap">
                       <div className="card w-100 border-0 bg-white shadow-xs p-0 mb-4">
                         <div className="card-body p-4 w-100 bg-current border-0 d-flex rounded-3">
+                          <Link href="/defaultsettings"> 
                           <a
-                            href="/defaultsettings"
                             className="d-inline-block mt-2"
                           >
                             <i className="ti-arrow-left font-sm text-white"></i>
                           </a>
+                          </Link>
                           <h4 className="font-xs text-white fw-600 ms-4 mb-0 mt-2">
                             Social Network
                           </h4>
@@ -145,13 +146,13 @@ router.reload(window.location.pathname);
                               </div>
 
                               <div className="col-lg-12 mb-0 mt-2">
-                                <a
+                                <button
 
                                   className="bg-primary text-center text-white font-xsss fw-600 p-3 w175 rounded-3 d-inline-block"
                                   onClick={updateInfo}
                                 >
                                   Save
-                                </a>
+                                </button>
                               </div>
                             </div>
                           </form>

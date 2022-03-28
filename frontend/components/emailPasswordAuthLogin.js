@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import React, { useCallback, useRef } from "react";
 import { useRouter } from "next/router";
+import Image from 'next/image';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {
   FacebookAuthProvider,
@@ -8,7 +9,9 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { auth } from "../firebase/clientApp";
-const emailPasswordAuthLogin = () => {
+import Link from 'next/link'
+
+const EmailPasswordAuthLogin = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const Router = useRouter();
@@ -52,19 +55,22 @@ const emailPasswordAuthLogin = () => {
       <div className="main-wrap">
         <div className="nav-header bg-transparent shadow-none border-0">
           <div className="nav-top w-100">
-            <a href="/">
+            <Link href="/">
+            <a >
               <i className="feather-zap text-success display1-size me-2 ms-0"></i>
               <span className="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">
                 Tunisia Meetups
               </span>{" "}
             </a>
+            </Link>
             <button className="nav-menu me-0 ms-auto"></button>
+            <Link href="/register">
             <a
-              href="/register"
               className="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl"
             >
               Register
             </a>
+            </Link>
           </div>
         </div>
         <div className="row">
@@ -100,22 +106,6 @@ const emailPasswordAuthLogin = () => {
                     />
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
-                  <div className="form-check text-left mb-3">
-                    <input
-                      type="checkbox"
-                      className="form-check-input mt-2"
-                      id="exampleCheck5"
-                    />
-                    <label className="form-check-label font-xsss text-grey-500">
-                      Remember me
-                    </label>
-                    <a
-                      href="/forgot"
-                      className="fw-600 font-xsss text-grey-700 mt-1 float-right"
-                    >
-                      Forgot your Password?
-                    </a>
-                  </div>
                 </form>
                 <div className="col-sm-12 p-0 text-left">
                   <div className="form-group mb-1">
@@ -129,9 +119,11 @@ const emailPasswordAuthLogin = () => {
                   </div>
                   <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">
                     Dont have account{" "}
-                    <a href="/register" className="fw-700 ms-1">
+                    <Link href="/register">
+                    <a  className="fw-700 ms-1">
                       Register
                     </a>
+                    </Link>
                   </h6>
                 </div>
                 <div className="col-sm-12 p-0 text-center mt-2">
@@ -173,4 +165,4 @@ const emailPasswordAuthLogin = () => {
     </Fragment>
   );
 };
-export default emailPasswordAuthLogin;
+export default EmailPasswordAuthLogin;

@@ -1,5 +1,5 @@
 import React, { Component, Fragment , useRef} from "react";
-
+import Link from "next/link";
 
 import Header from "./Header";
 import {  setDoc, doc , serverTimestamp} from "firebase/firestore";
@@ -59,9 +59,11 @@ function NewEventForm(props) {
                     <div className="middle-wrap">
                       <div className="card w-100 border-0 bg-white shadow-xs p-0 mb-4">
                         <div className="card-body p-4 w-100 bg-current border-0 d-flex rounded-3">
-                          <a href="/defaultsettings" className="d-inline-block mt-2">
+                          <Link href="/defaultsettings"> 
+                          <a  className="d-inline-block mt-2">
                             <i className="ti-arrow-left font-sm text-white"></i>
                           </a>
+                          </Link>
                           <h4 className="font-xs text-white fw-600 ms-4 mb-0 mt-2">
                             Create a New Event
                           </h4>

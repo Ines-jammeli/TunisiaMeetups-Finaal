@@ -80,7 +80,7 @@ if(currentUser){
                             <ul className="list-inline">
 
                               <li className="list-inline-item d-block me-0">
-                                <a
+                                <NavLink
                                   href="javascript:void(0)"
                                   onClick={signOutHandler}
                                   className="pt-2 pb-2 d-flex align-items-center"
@@ -90,7 +90,7 @@ if(currentUser){
                                     Logout
                                   </h4>
                                   <i className="ti-angle-right font-xsss text-grey-500 ms-auto mt-3"></i>
-                                </a>
+                                </NavLink>
                               </li>
                             </ul>
                             <br/> <br/> <br/> <br/>

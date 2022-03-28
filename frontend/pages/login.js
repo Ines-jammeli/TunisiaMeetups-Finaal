@@ -8,7 +8,7 @@ import db from "../firebase/clientApp"
 
 import { handleUserProfile } from "../context/handleUserProfile";
 
-import EmailPasswordAuthLogin from "../components/emailPasswordAuthLogin";
+import EmailPasswordAuthLogin from "../components/EmailPasswordAuthLogin";
 
 const Login = () => {
 

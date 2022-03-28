@@ -1,4 +1,4 @@
-import EmailPasswordAuthSignup from "../components/emailPasswordAuthSignup";
+import EmailPasswordAuthSignup from "../components/EmailPasswordAuthSignup";
 import { useContext } from "react";
 
 import { AuthContext } from "../context/AuthContext";

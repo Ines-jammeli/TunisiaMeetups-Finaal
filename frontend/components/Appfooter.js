@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 // import { Link } from 'react-router-dom';
 import { NavLink } from "./NavLink";
+import Image from 'next/image';
+
 const Appfooter =() =>{
 
         return (

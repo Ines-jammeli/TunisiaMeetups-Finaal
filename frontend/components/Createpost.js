@@ -7,6 +7,8 @@ import { AuthContext } from "../context/AuthContext";
 import { useRouter } from "next/router";
 import NavLink from "../components/NavLink";
 import Router from "next/router";
+import Link from 'next/link'
+
 
 const Createpost=(props) =>{
 
@@ -74,22 +76,22 @@ async function addPost() {
           ></textarea>
         </div>
         <div className="card-body d-flex p-0 mt-0">
-
+        <Link href={`/createEvent/${currentUser.uid}`}>
           <a
-            href={`/createEvent/${currentUser.uid}`}
             className="d-flex align-items-center font-xssss fw-600 ls-1 text-grey-700 text-dark pe-4"
           >
             <i className="font-md text-warning feather-map-pin me-2"></i>
             <span className="d-none-xs">Event</span>
           </a>
+          </Link>
           <div className="ms-auto pointer ">
-            <a
+            <button
               className="font-xsss fw-600 text-blue-600 card-body p-0 d-flex align-items-center"
 onClick = { addPost }
             >
               <i className="btn-round-sm font-xs text-primary feather-edit-3 me-3 bg-grey"></i>
               Post
-            </a>
+            </button>
           </div>
         </div>
       </div>

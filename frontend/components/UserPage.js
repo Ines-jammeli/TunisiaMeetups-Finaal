@@ -5,6 +5,8 @@ import Profiledetail from "../components/Profiledetail";
 import ProfilecardThree from "../components/ProfilecardThree";
 import Postview from "../components/Postview";
 import Createpost from "../components/Createpost";
+import Link from "next/link";
+
 const UserPage = (props) => {
   console.log('likes' + props);
 

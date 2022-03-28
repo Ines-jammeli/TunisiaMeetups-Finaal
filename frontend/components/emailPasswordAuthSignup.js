@@ -1,4 +1,4 @@
-
+import Link from 'next/link'
 import React, { useCallback, Fragment ,useRef} from "react";
 import db from "../firebase/clientApp"
 import { auth } from "../firebase/clientApp";
@@ -12,7 +12,8 @@ import {
 } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/router";
-const emailPasswordAuthSignup = () => {
+
+const EmailPasswordAuthSignup = () => {
  const Router = useRouter();
   const fullNameInputRef = useRef();
   const emailInputRef = useRef();
@@ -45,20 +46,22 @@ console.log(enteredFullName, enteredEmail, enteredPassword);
       <div className="main-wrap">
         <div className="nav-header bg-transparent shadow-none border-0">
           <div className="nav-top w-100">
-            <a href="/">
+            <Link href="/">
+            <a>
               <i className="feather-zap text-success display1-size me-2 ms-0"></i>
               <span className="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">
                 Tunisia Meetups
               </span>
             </a>
+            </Link>
             <button className="nav-menu me-0 ms-auto"></button>
-
+            <Link href="/login">
             <a
-              href="/login"
               className="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl"
             >
               Login
             </a>
+            </Link>
           </div>
         </div>
 
@@ -104,23 +107,6 @@ console.log(enteredFullName, enteredEmail, enteredPassword);
                     />
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
-                  <div className="form-group icon-input mb-1">
-                    <input
-                      type="Password"
-                      className="style2-input ps-5 form-control text-grey-900 font-xss ls-3"
-                    />
-                    <i className="font-sm ti-lock text-grey-500 pe-0"></i>
-                  </div>
-                  <div className="form-check text-left mb-3">
-                    <input
-                      type="checkbox"
-                      className="form-check-input mt-2"
-                      id="exampleCheck2"
-                    />
-                    <label className="form-check-label font-xsss text-grey-500">
-                      Accept Term and Conditions
-                    </label>
-                  </div>
                 </form>
 
                 <div className="col-sm-12 p-0 text-left">
@@ -138,10 +124,11 @@ console.log(enteredFullName, enteredEmail, enteredPassword);
                   
                   <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">
                     Already have account{" "}
-                    <a href="/login" className="fw-700 ms-1">
+                    <Link href="/login">
+                    <a className="fw-700 ms-1">
                       Login
                     </a>
-                    
+                    </Link>
                   </h6>
                   
                 </div>
@@ -156,4 +143,4 @@ console.log(enteredFullName, enteredEmail, enteredPassword);
 };
 
 
-export default emailPasswordAuthSignup;
+export default EmailPasswordAuthSignup;

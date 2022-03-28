@@ -8,12 +8,14 @@ function Landing() {
         <div className="container max-container">
           <div className="row">
             <div className="col-lg-3 col-md-6 col-sm-3 col-xs-6">
-              <a href="/" className="logo">
+              <Link href="/" >
+              <a className="logo">
                 <i className="feather-zap text-success display2-size me-3 ms-0"></i>
                 <span className="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">
                   Tunisia Meetups
                 </span>{" "}
               </a>
+              </Link>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 d-none d-lg-block">
               <ul className="list-inline text-center mb-0 mt-2 pt-1">
@@ -32,7 +34,6 @@ function Landing() {
             <div className="col-lg-3 col-md-6 col-sm-3 col-xs-6 text-right">
               <Link href="/login">
                 <a
-                  href="/login"
                   className="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl"
                 >
                   Login
@@ -55,7 +56,7 @@ function Landing() {
               <div className="col-lg-5 col-md-6 col-sm-8">
                 <h2 className="title-text mb-5 mt-5">
                   <b>
-                  Get access to all of <span>Tunisian Associations'</span> Events.
+                  Get access to all of <span>Tunisian Associations&apos;</span> Events.
                   </b>
                 </h2>
                 <h4 className="d-inline-block">
@@ -102,12 +103,13 @@ function Landing() {
               <p>
               Join us so that we can bring joy to as many people as possible.
               </p>
+              <Link href="/login">
               <a
-                href="/login"
                 className="btn btn-lg btn-primary mr-4 text-uppercase mt-4"
               >
                 Join Us
               </a> 
+              </Link>
             </div>
           </div>
         </div>
@@ -128,14 +130,15 @@ function Landing() {
                 <b>Our Planet needs us.</b>
               </h2>{" "}
               <p>
-                Life in Plastic ain't Fantastic. Let's make our Planet Green and Clean again
+                Life in Plastic ain&apos;t Fantastic. Let&apos;s make our Planet Green and Clean again
               </p>
+              <Link href="/login"> 
               <a
-                href="/login"
                 className="btn btn-lg btn-primary mr-4 text-uppercase mt-4"
               >
                 Join Us
               </a> 
+              </Link>
             </div>
           </div>
         </div>
@@ -158,12 +161,13 @@ function Landing() {
               <p>
               We want everyone to go to bed full of food. We believe that there is enough food on the planet for everyone.
               </p>
+              <Link href="/login"> 
               <a
-                href="/login"
                 className="btn btn-lg btn-primary mr-4 text-uppercase mt-4"
               >
                 Join Us
               </a> 
+              </Link>
             </div>
           </div>
         </div>
@@ -186,9 +190,11 @@ function Landing() {
                 Tel: 77 777 777
               </p>
               <div className="col-sm-12 text-center mt-5">
-                <a href="/login" className="btn-lg btn bg-white">
+                <Link href="/login"> 
+                <a  className="btn-lg btn bg-white">
                   Join Us
                 </a>
+                </Link>
               </div>
             </div>
           </div>

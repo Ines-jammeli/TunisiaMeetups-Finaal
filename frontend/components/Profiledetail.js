@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 
 const Profiledetail = (props) => {
   let object = props.userData;
@@ -33,10 +34,12 @@ const Profiledetail = (props) => {
   <div className="card-body d-flex pt-0">
         <i className="feather-facebook text-grey-500 me-3 font-lg"></i>
         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-          <a href={object.facebook} target="_blank">
+          <Link href={object.facebook}> 
+          <a target="_blank">
             {" "}
 Facebook
           </a>
+          </Link>
         </h4>
       </div>
     ):(
@@ -46,10 +49,12 @@ Facebook
   <div className="card-body d-flex pt-0">
         <i className="feather-twitter text-grey-500 me-3 font-lg"></i>
         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-          <a href={object.twitter} target="_blank">
+          <Link href={object.twitter}> 
+          <a target="_blank">
             {" "}
 Twitter
           </a>
+          </Link>
         </h4>
       </div>
 ):(
@@ -60,10 +65,12 @@ Twitter
   <div className="card-body d-flex pt-0">
         <i className="feather-linkedin text-grey-500 me-3 font-lg"></i>
         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-          <a href={object.linkedin} target="_blank">
+          <Link href={object.linkedin} > 
+          <a target="_blank">
             {" "}
 Linkedin
           </a>
+          </Link>
         </h4>
       </div>
     ):(
@@ -74,10 +81,12 @@ Linkedin
     <div className="card-body d-flex pt-0">
         <i className="feather-instagram text-grey-500 me-3 font-lg"></i>
         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-          <a href={object.instagram} target="_blank">
+          <Link href={object.instagram}> 
+          <a target="_blank">
             {" "}
 Instagram
           </a>
+          </Link>
         </h4>
       </div>
     ):(
@@ -88,10 +97,12 @@ Instagram
   <div className="card-body d-flex pt-0">
         <i className="feather-youtube text-grey-500 me-3 font-lg"></i>
         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-          <a href={object.youtube} target="_blank">
+          <Link href={object.youtube}> 
+          <a target="_blank">
             {" "}
 Youtube
           </a>
+          </Link>
         </h4>
       </div>
       ):(

@@ -1,10 +1,10 @@
 import React, { Component, Fragment , useRef} from "react";
-
+import Link from 'next/link'
 
 import Header from "../components/Header";
 import { updateDoc , doc, getDocs , collection , query, where } from "firebase/firestore";
 import { auth , db} from "../firebase/clientApp";
-import NavLink from "../components/NavLink";
+import NavLink from './NavLink'
 import { useContext } from "react";
 import { useRouter } from "next/router";
 import { AuthContext } from "../context/AuthContext";
@@ -74,9 +74,9 @@ async function updateInfo() {
               <div className="middle-wrap">
                 <div className="card w-100 border-0 bg-white shadow-xs p-0 mb-4">
                   <div className="card-body p-4 w-100 bg-current border-0 d-flex rounded-3">
-                    <a href="/defaultsettings" className="d-inline-block mt-2">
+                    <NavLink href="/defaultsettings" className="d-inline-block mt-2">
                       <i className="ti-arrow-left font-sm text-white"></i>
-                    </a>
+                    </NavLink>
                     <h4 className="font-xs text-white fw-600 ms-4 mb-0 mt-2">
                       Account Details
                     </h4>

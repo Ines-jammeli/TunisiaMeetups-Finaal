@@ -2,7 +2,7 @@ import React from "react";
 import { doc, deleteDoc, increment, updateDoc } from "firebase/firestore";
 import Router from "next/router";
 import { auth, db } from "../firebase/clientApp";
-
+import Link from 'next/link'
 import { Button, Modal, ModalBody, ModalFooter } from "reactstrap";
 
 const Example=(props)=> {
@@ -15,10 +15,10 @@ await deleteDoc(doc(db, "posts", `${props.id}`));
   }
   return (
     <>
-      <a
+      <button
         className="ti-close text-grey-900 btn-round-md bg-greylight font-xss"
         onClick={() => setModalOpen(!modalOpen)}
-      ></a>
+      ></button>
 
       <Modal toggle={() => setModalOpen(!modalOpen)} isOpen={modalOpen}>
         <div className=" modal-header">
